@@ -1,0 +1,32 @@
+version: '3'
+services:
+  # 服務的名字
+  app:
+    # docker deamon開啟時該container就會重啟
+    restart: always
+    # 該路徑底下需要包含Dockerfile
+    build: ./
+    # image 名稱
+    image: blog_db
+    # 名稱
+    container_name: blogapp
+    # 對應哪個port
+    ports:
+      - "5002:5002"
+    environment:
+    - DB_HOST=database
+    - DB_NAME=blog_db
+    - DB_USER=blogapp
+    - DB_PASSWORD=KBaM534TMpUWTEFU
+    # 容器裡的檔案掛在容器外的哪裡
+    # connect at local file HOST:CONTAINER
+    volumes:  
+      - ./:/web_service
+    depends_on:
+    - database
+  database:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=blogapp
+      - POSTGRES_PASSWORD=KBaM534TMpUWTEFU
+      - POSTGRES_DB=blog_db

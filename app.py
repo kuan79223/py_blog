@@ -4,12 +4,18 @@ import os
 
 app = Flask(__name__)
 
+# conn = psycopg2.connect(
+#     host='192.168.62.131',
+#     port='5432',
+#     database='blog_db',
+#     user='blogapp',
+#     password='KBaM534TMpUWTEFU'
+# )
 conn = psycopg2.connect(
-    host='192.168.62.131',
-    port='5432',
-    database='blog_db',
-    user='blogapp',
-    password='KBaM534TMpUWTEFU'
+    host=os.environ.get('DB_HOST'),
+    database=os.environ.get('DB_NAME'),
+    user=os.environ.get('DB_USER'),
+    password=os.environ.get('DB_PASSWORD')
 )
 
 @app.route('/users', methods=['POST'])
