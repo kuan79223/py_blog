@@ -12,7 +12,7 @@ services:
     container_name: blogapp
     # 對應哪個port
     ports:
-      - "5002:5002"
+      - "8082:5002"
     environment:
     - DB_HOST=database
     - DB_NAME=blog_db
