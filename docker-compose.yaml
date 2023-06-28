@@ -6,7 +6,7 @@ services:
     build: .
     # 對應哪個port
     ports:
-      - "8082:8082"
+      - "8082:5002"
     environment:
     - DB_HOST=db
     - DB_NAME=blog_db
@@ -15,7 +15,9 @@ services:
     depends_on:
     - db
   db:
+    # db 映像檔名稱
     image: postgres
+    # docker deamon開啟時該container就會重啟
     restart: always
     ports: 
       - "5432:5432"
