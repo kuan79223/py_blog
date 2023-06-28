@@ -11,7 +11,7 @@ services:
     - DB_HOST=db
     - DB_NAME=blog_db
     - DB_USER=blogapp
-    - DB_PASSWORD=KBaM534TMpUWTEFU
+    - DB_PASSWORD=uDb2ezDsbKsxsZk8
     depends_on:
     - db
   db:
@@ -23,5 +23,5 @@ services:
       - "5432:5432"
     environment:
       - POSTGRES_USER=blogapp
-      - POSTGRES_PASSWORD=KBaM534TMpUWTEFU
+      - POSTGRES_PASSWORD=nz93N9fupzWetEXG
       - POSTGRES_DB=blog_db
