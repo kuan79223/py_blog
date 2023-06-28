@@ -14,6 +14,6 @@ RUN pip install -r requirements.txt
 EXPOSE 5002
 
 # 定義容器啟動後要執行的命令
-CMD "python", "app.py"
+CMD python3 app.py
 
 
