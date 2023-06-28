@@ -3,7 +3,7 @@ services:
   # 服務的名字
   app:
     # 該路徑底下需要包含Dockerfile
-    build: .
+    build: ./
     # 對應哪個port
     ports:
       - "8082:5002"
