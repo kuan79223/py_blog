@@ -7,12 +7,12 @@ services:
     # 對應哪個port
     ports:
       - "8082:5002"
-      # 資料庫的 user 密碼 uDb2ezDsbKsxsZk8
+      # 資料庫的 user 密碼 
     environment:
     - DB_HOST=db
     - DB_NAME=blog_db
     - DB_USER=blogapp
-    - DB_PASSWORD=nz93N9fupzWetEXG
+    - DB_PASSWORD=uDb2ezDsbKsxsZk8
     depends_on:
     - db
   db:
@@ -22,8 +22,8 @@ services:
     restart: always
     ports: 
       - "5432:5432"
-    # 創建映像檔的密碼也就是資料庫密碼  nz93N9fupzWetEXG
+    # 創建映像檔的密碼也就是資料庫密碼  
     environment:
       - POSTGRES_USER=blogapp
-      - POSTGRES_PASSWORD=uDb2ezDsbKsxsZk8
+      - POSTGRES_PASSWORD=nz93N9fupzWetEXG
       - POSTGRES_DB=blog_db
