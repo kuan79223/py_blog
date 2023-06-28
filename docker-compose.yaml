@@ -5,7 +5,9 @@ services:
     # 該路徑底下需要包含Dockerfile
     build: .
     # image 名稱
-    image: blog_image
+    image: "blog_image"
+
+    links: "postgres"
     # 名稱
     container_name: blog_container
     # 對應哪個port
@@ -19,7 +21,8 @@ services:
     depends_on:
     - db
   db:
-    image: postgres
+    image: "postgres"
+    ports: 5432:5432
     environment:
       - POSTGRES_USER=blogapp
       - POSTGRES_PASSWORD=KBaM534TMpUWTEFU
