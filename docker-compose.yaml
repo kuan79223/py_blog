@@ -3,7 +3,7 @@ services:
   # 服務的名字
   app:
     # 該路徑底下需要包含Dockerfile
-    build: ./
+    build: .
     # image 名稱
     image: blog_image
     # 名稱
@@ -11,6 +11,11 @@ services:
     # 對應哪個port
     ports:
       - "8000:8000"
+    environment:
+    - DB_HOST=db
+    - DB_NAME=blog_db
+    - DB_USER=blogapp
+    - DB_PASSWORD=KBaM534TMpUWTEFU
     depends_on:
     - db
   db:
