@@ -7,7 +7,7 @@ services:
     # image 名稱
     image: "blog_image"
 
-    links: "postgres"
+    links: db
     # 名稱
     container_name: blog_container
     # 對應哪個port
