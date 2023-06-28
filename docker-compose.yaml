@@ -6,13 +6,11 @@ services:
     build: .
     # image 名稱
     image: "blog_image"
-
-    links: db
     # 名稱
     container_name: blog_container
     # 對應哪個port
     ports:
-      - "8000:8000"
+      - "8082:5002"
     environment:
     - DB_HOST=db
     - DB_NAME=blog_db
